@@ -3,9 +3,6 @@ const nameInput = document.getElementById("register-name");
 const emailInput = document.getElementById("register-email");
 const passwordInput = document.getElementById("password");
 
-
-let isValid;
-
 function showSuccess(input) {
   const formControl = input.parentElement;
   formControl.className = "form-control valid";
@@ -17,27 +14,27 @@ function showError(input) {
 }
 
 function checkRequired(inputArr) {
+  let isValid = true;
+
   inputArr.forEach((input) => {
     if (input.value.trim() === "") {
       showError(input);
-      isValid = false;
+      isValid = false
     } else {
       showSuccess(input);
-      isValid = true;
     }
   });
+  return isValid;
 }
 
 registerForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Prevent form submission
 
   // Perform form validation
-  checkRequired([nameInput, emailInput, passwordInput]);
+  const isValid = checkRequired([nameInput, emailInput, passwordInput]);
 
   // If form is valid, proceed with form submission
   if (isValid) {
     window.location.href = "seif.html";
   }
 });
-
-
