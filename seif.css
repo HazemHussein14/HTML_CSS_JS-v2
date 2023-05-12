@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(85, 85, 201);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 200px auto;
+  border-radius: 30px;
+  background-color: silver;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+/*menu*/
+.container .menu {
+  background-color: white;
+  width: 200px;
+  padding: 20px;
+}
+
+.menu .logo {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.menu ul {
+  border-bottom: 1px solid silver;
+}
+
+.menu ul li {
+  padding: 8px 0;
+}
+
+.menu ul li i,
+.menu ul li a {
+  transition: 0.5s;
+}
+.menu ul li i {
+  margin-right: 12px;
+}
+.menu ul li.active {
+  color: rgb(85, 85, 201);
+  border-right: 2px solid rgb(85, 85, 201);
+}
+.menu ul li:hover a,
+.menu ul li:hover i {
+  color: rgb(85, 85, 201);
+}
+/*end menu*/
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.one {
+  display: flex;
+  justify-content: space-between;
+}
+
+.two {
+  margin: auto;
+}
+
+.three {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #fff;
+  width: 200px;
+  border-radius: 4px;
+  padding: 4px;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  backface-visibility: hidden;
+}
+
+.card.flip {
+  transform: rotateY(-180deg);
+}
+
+.card .front {
+  backface-visibility: hidden;
+}
+
+.card .back {
+  z-index: 2;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
